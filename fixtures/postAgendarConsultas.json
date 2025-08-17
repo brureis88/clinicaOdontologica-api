@@ -1,0 +1,8 @@
+{
+    "pacienteId": 1,
+    "profissionalId": 1,
+    "data": "2025-08-17",
+    "horario": "16:00",
+    "tipoConsulta": "Consulta de Teste",
+    "observacoes": "Primeira consulta"
+}
