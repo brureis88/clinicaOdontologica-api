@@ -158,3 +158,6 @@ config/local.json
 # Arquivos temporários
 *.tmp
 *.temp
+
+mochawesome-report/
+.env
