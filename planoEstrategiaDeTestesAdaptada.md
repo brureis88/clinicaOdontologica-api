@@ -97,8 +97,6 @@ Baseado na ISO-29119-3.
 
 ## 6. Automação de Testes
 
-A automação de testes será implementada para as condições de teste da API, visando a eficiência e a repetibilidade.
-
 | ID    | Condição                                                                  | Resultado Esperado                        | Camada |
 |-------|---------------------------------------------------------------------------|-------------------------------------------|--------|
 | 01.01 | Validar agendamento com horário disponível                                | Sucesso                                   | API    |
@@ -131,8 +129,6 @@ A automação de testes será implementada para as condições de teste da API, 
 
 ## 7. Mapeamento dos Dados de Teste
 
-Esta seção descreve os dados de teste essenciais para a execução dos testes, indicando seu tipo, responsável e status atual.
-
 | Dado                                                  | Tipo                  | Responsável       | Status       |
 |-------------------------------------------------------|-----------------------|-------------------|--------------|
 | Paciente Existente                                    | Válido (Entidade)     | Analista de Testes | Em criação  |
@@ -148,12 +144,9 @@ Esta seção descreve os dados de teste essenciais para a execução dos testes,
 
 ## 8. Defeitos Conhecidos
 
-Esta seção será preenchida com quaisquer defeitos conhecidos no sistema.
-
 | ID | Defeito         | Camada |
 |----|-----------------|--------|
 |    | **Definir aqui.** |        |
 
 ```
-
-**Material extraído do curso Liderança em Testes de Software com Júlio de Lima. Saiba mais em www.juliodelima.com.br.**
+Material extraído do curso Liderança em Testes de Software com Júlio de Lima. Saiba mais em www.juliodelima.com.br.
