@@ -155,3 +155,5 @@ Esta seção será preenchida com quaisquer defeitos conhecidos no sistema.
 |    | **Definir aqui.** |        |
 
 ```
+
+**Material extraído do curso Liderança em Testes de Software com Júlio de Lima. Saiba mais em www.juliodelima.com.br.**
