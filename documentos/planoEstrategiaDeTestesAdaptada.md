@@ -32,14 +32,14 @@ Baseado na ISO-29119-3.
 | 01.05 | Validar agendamento sem informar o profissional           | Recusado           | API    |
 | 01.06 | Validar agendamento sem informar o paciente               | Recusado           | API    |
 | 01.07 | Validar agendamento sem informar o horário                | Recusado           | API    |
+| 01.08 | Validar agendamento sem informar a data                   | Recusado           | API    |
 
 ### US-02: Consultar horários disponíveis
 
 | ID    | Condição                                                           | Resultado Esperado         | Camada |
 |-------|--------------------------------------------------------------------|----------------------------|--------|
 | 02.01 | Validar horários disponíveis para o profissional                   | Retorna na lista           | API    |
-| 02.02 | Validar horários ocupados e bloqueados para o profissional         | Não devem constar na lista | API    |
-| 02.03 | Validar feriados                                                   | Não devem constar na lista | API    |
+| 02.02 | Validar horários ocupados para o profissional                      | Não devem constar na lista | API    |
 
 ### US-03: Editar agendamento existente
 
@@ -55,9 +55,9 @@ Baseado na ISO-29119-3.
 
 ### US-04: Cancelar agendamento
 
-| ID    | Condição                                        | Resultado Esperado                  | Camada |
-|-------|-------------------------------------------------|-------------------------------------|--------|
-| 04.01 | Validar Cancelamento                            | Horário fica disponível para agendamento | API    |
+| ID    | Condição                                             | Resultado Esperado         | Camada |
+|-------|------------------------------------------------------|----------------------------|--------|
+| 04.01 | Validar Cancelamento                                 | Status fica como cancelada | API    |
 
 ### US-05: Bloquear horário na agenda do profissional
 
@@ -97,26 +97,26 @@ Baseado na ISO-29119-3.
 
 ## 6. Automação de Testes
 
-| ID    | Condição                                                                  | Resultado Esperado                        | Camada |
-|-------|---------------------------------------------------------------------------|-------------------------------------------|--------|
-| 01.01 | Validar agendamento com horário disponível                                | Sucesso                                   | API    |
-| 01.02 | Validar agendamento com horário indisponível (sobrepondo)                 | Recusado                                  | API    |
-| 01.03 | Validar agendamento com horário fora do expediente                        | Recusado                                  | API    |
-| 01.04 | Validar agendamento com paciente inexistente                              | Recusado                                  | API    |
-| 01.05 | Validar agendamento sem informar o profissional                           | Recusado                                  | API    |
-| 01.06 | Validar agendamento sem informar o paciente                               | Recusado                                  | API    |
-| 01.07 | Validar agendamento sem informar o horário                                | Recusado                                  | API    |
-| 02.01 | Validar horários disponíveis para o profissional                          | Retorna na lista                          | API    |
-| 02.02 | Validar horários ocupados e bloqueados para o profissional                | Não devem constar na lista                | API    |
-| 02.03 | Validar feriados                                                          | Não devem constar na lista                | API    |
-| 03.01 | Validar edição de agendamento com horário disponível                      | Sucesso                                   | API    |
+| ID    | Condição                                                                  | Resultado Esperado                        | Camada  |
+|-------|---------------------------------------------------------------------------|-------------------------------------------|---------|
+| 01.01 | Validar agendamento com horário disponível                                | Sucesso                                   | API/WEB |
+| 01.02 | Validar agendamento com horário indisponível (sobrepondo)                 | Recusado                                  | API     |
+| 01.03 | Validar agendamento com horário fora do expediente                        | Recusado                                  | API     |
+| 01.04 | Validar agendamento com paciente inexistente                              | Recusado                                  | API     |
+| 01.05 | Validar agendamento sem informar o profissional                           | Recusado                                  | API/WEB |
+| 01.06 | Validar agendamento sem informar o paciente                               | Recusado                                  | API/WEB |
+| 01.07 | Validar agendamento sem informar o horário                                | Recusado                                  | API/WEB |
+| 01.08 | Validar agendamento sem informar a data                                   | Recusado                                  | API/WEB |
+| 02.01 | Validar horários disponíveis para o profissional                          | Retorna na lista                          | WEB     |
+| 02.02 | Validar horários ocupados para o profissional                             | Não devem constar na lista                | WEB     |
+| 03.01 | Validar edição de agendamento com horário disponível                      | Sucesso                                   | WEB     |
 | 03.02 | Validar edição de agendamento com horário indisponível (sobrepondo)       | Recusado                                  | API    |
 | 03.03 | Validar edição de agendamento com horário fora do expediente              | Recusado                                  | API    |
 | 03.04 | Validar edição de agendamento com paciente inexistente                    | Recusado                                  | API    |
 | 03.05 | Validar edição de agendamento sem informar o profissional                 | Recusado                                  | API    |
 | 03.06 | Validar edição de agendamento sem informar o paciente                     | Recusado                                  | API    |
 | 03.07 | Validar edição de agendamento sem informar o horário                      | Recusado                                  | API    |
-| 04.01 | Validar Cancelamento                                                      | Horário fica disponível para agendamento  | API    |
+| 04.01 | Validar Cancelamento                                                      | Status fica como cancelada                | WEB     |
 | 05.01 | Validar bloqueio de horário disponível                                    | Sucesso                                   | API    |
 | 05.02 | Validar bloqueio de horário já bloqueado                                  | Recusado                                  | API    |
 | 06.01 | Validar desbloqueio de horário bloqueado                                  | Retorna na lista                          | API    |
@@ -129,24 +129,23 @@ Baseado na ISO-29119-3.
 
 ## 7. Mapeamento dos Dados de Teste
 
-| Dado                                                  | Tipo                  | Responsável       | Status       |
-|-------------------------------------------------------|-----------------------|-------------------|--------------|
-| Paciente Existente                                    | Válido (Entidade)     | Analista de Testes | Em criação  |
-| Paciente Inexistente                                  | Inválido (Entidade)   | Analista de Testes | Em criação  |
-| Profissional Existente                                | Válido (Entidade)     | Analista de Testes | Em criação  |
-| Profissional Inexistente                              | Inválido (Entidade)   | Analista de Testes | Em criação  |
-| Horário Bloqueado (para tentativa de novo bloqueio)   | Inválido              | Analista de Testes | Em criação  |
-| Horário Disponível (para tentativa de bloqueio)       | Inválido              | Analista de Testes | Em criação  |
-| Horário Disponível (para realizar agendamento)        | Válido                | Analista de Testes | Em criação  |
-| Agendamento Cancelado                                 | Válido                | Analista de Testes | Em criação  |
-| Data com Feriado                                      | Válido                | Analista de Testes | Em criação  |
-| Horário Agendado (para tentativa de editar)           | Válido                | Analista de Testes | Em criação  |
+| Dado                                                  | Tipo                  | Responsável        | Status     |
+|-------------------------------------------------------|-----------------------|--------------------|------------|
+| Paciente Existente                                    | Válido (Entidade)     | Analista de Testes | Concluído  |
+| Paciente Inexistente                                  | Inválido (Entidade)   | Analista de Testes | Concluído  |
+| Profissional Existente                                | Válido (Entidade)     | Analista de Testes | Concluído  |
+| Profissional Inexistente                              | Inválido (Entidade)   | Analista de Testes | Concluído  |
+| Horário Bloqueado (para tentativa de novo bloqueio)   | Inválido              | Analista de Testes | Em criação |
+| Horário Disponível (para tentativa de bloqueio)       | Inválido              | Analista de Testes | Em criação |
+| Horário Disponível (para realizar agendamento)        | Válido                | Analista de Testes | Concluído  |
+| Agendamento Cancelado                                 | Válido                | Analista de Testes | Em criação |
+| Horário Agendado (para tentativa de editar)           | Válido                | Analista de Testes | Concluído  |
 
 ## 8. Defeitos Conhecidos
 
-| ID | Defeito         | Camada |
-|----|-----------------|--------|
-|    | **Definir aqui.** |        |
+| ID | Defeito                                                                                             | Camada |
+|----|-----------------------------------------------------------------------------------------------------|--------|
+| 01 | Está semdp ´pssível bloquear horári na agenda do profissional com "tipo de bloqueio" não cadastrado | API    |
 
 ```
 Material extraído do curso Liderança em Testes de Software com Júlio de Lima. Saiba mais em www.juliodelima.com.br.
