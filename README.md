@@ -1,6 +1,15 @@
 # 🏥 API Clínica Odontológica
 
-API REST completa para agendamento de consultas odontológicas, desenvolvida em JavaScript com Express.js.
+Este repositório faz parte de um conjunto de projetos para a solução de agendamento e gestão de uma clínica odontológica:
+
+- [Backend + Testes Automatizados API] - Atual
+- [Frontend Web (React)](https://github.com/brureis88/clinicaOdontologica-web)
+- [Testes Automatizados E2E (Cypress)](https://github.com/brureis88/clinicaOdontologica-web-tests)
+- [API Performance (k6)](https://github.com/brureis88/clinicaOdontologica-api-performance)
+
+---
+
+API REST para agendamento de consultas odontológicas, desenvolvida em JavaScript com Express.js.
 
 ## 📋 Funcionalidades
 
@@ -31,20 +40,35 @@ API REST completa para agendamento de consultas odontológicas, desenvolvida em 
 - **Moment.js** - Manipulação de datas
 - **CORS** - Cross-Origin Resource Sharing
 
+
 ## 📁 Estrutura do Projeto
 
 ```
 projetoClinica/
 ├── data/
-│   └── database.js          # Dados em memória
+│   └── database.js            # Dados em memória
 ├── routes/
-│   ├── consultas.js         # Rotas de consultas
-│   ├── profissionais.js     # Rotas de profissionais
-│   └── pacientes.js         # Rotas de pacientes
-├── server.js                # Servidor principal
-├── package.json             # Dependências
-├── .gitignore              # Arquivos ignorados pelo Git
-└── README.md               # Documentação
+│   ├── consultas.js           # Rotas de consultas
+│   ├── profissionais.js       # Rotas de profissionais
+│   └── pacientes.js           # Rotas de pacientes
+├── fixtures/
+│   ├── postAgendarConsultas.json   # Exemplo de payload para agendar consulta
+│   └── postBloquearHorario.json    # Exemplo de payload para bloquear horário
+├── mochawesome-report/
+│   ├── mochawesome.html        # Relatório de testes
+│   ├── mochawesome.json        # Dados do relatório
+│   └── assets/                 # Arquivos estáticos do relatório
+├── test/
+│   ├── consultas.test.js       # Testes de consultas
+│   ├── bloquearHorario.test.js # Testes de bloqueio de horário
+│   └── test-utils.js           # Utilitários de teste
+├── documentos/
+│   ├── Defeito-01_05.03-tipoDeBloqueioNaoCadastrado.pdf # Documento de defeito
+│   └── planoEstrategiaDeTestesAdaptada.md               # Plano de testes
+├── server.js                  # Servidor principal
+├── package.json               # Dependências e scripts
+├── .gitignore                 # Arquivos ignorados pelo Git
+└── README.md                  # Documentação
 ```
 
 ## 🛠️ Instalação e Configuração
@@ -67,7 +91,7 @@ O projeto inclui um arquivo `.gitignore` configurado para ignorar:
 
 1. **Clone o repositório**
    ```bash
-   git clone <url-do-repositorio>
+   git clone <https://github.com/brureis88/clinicaOdontologica-api.git>
    cd projetoClinica
    ```
 
@@ -255,20 +279,33 @@ rm -rf node_modules package-lock.json
 npm install
 ```
 
+## 🧪 Como Executar os Testes
+
+Este projeto inclui testes automatizados para validar as funcionalidades da API. Siga os passos abaixo para executá-los:
+
+### Pré-requisitos
+
+- Certifique-se de que todas as dependências estão instaladas:
+  ```bash
+  npm install
+  ```
+
+### Executando os Testes
+
+- Para rodar todos os testes e gerar um relatório:
+  ```bash
+  npm test
+  ```
+
+### Relatório de Testes
+
+- Após a execução, um relatório será gerado na pasta `mochawesome-report/`.
+- Abra o arquivo `mochawesome.html` no navegador para visualizar o relatório interativo.
+
+---
+
 ## 📝 Licença
 
 Este projeto é destinado exclusivamente para estudos de teste de software.
 
-## 👨‍💻 Desenvolvimento
-
-Para contribuir com o desenvolvimento:
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature
-3. Commit suas mudanças
-4. Push para a branch
-5. Abra um Pull Request
-
----
-
-**Desenvolvido para estudos de teste de software** 🧪
+**Desenvolvido por Bruno Reis**
