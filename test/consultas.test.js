@@ -104,4 +104,17 @@ describe('GET /api/consultas', async () => {
 
         testUtils.validateResponseFalseConsult(response, 400, 'Todos os campos obrigatórios devem ser preenchidos')
     })
+    
+    it('Validar agendamento sem informar a data', async () => {
+        const bodyAgendarConsultas = { ...postAgendarConsultas }
+        bodyAgendarConsultas.data = null
+        bodyAgendarConsultas.horario = testUtils.getFutureDate(1)
+
+        const response = await request(process.env.BASE_URL)
+            .post('/api/consultas/agendar')
+            .set('Content-Type', 'application/json')
+            .send(bodyAgendarConsultas)
+
+        testUtils.validateResponseFalseConsult(response, 400, 'Todos os campos obrigatórios devem ser preenchidos')
+    })
 })
