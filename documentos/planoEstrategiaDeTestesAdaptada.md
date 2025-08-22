@@ -143,9 +143,9 @@ Baseado na ISO-29119-3.
 
 ## 8. Defeitos Conhecidos
 
-| ID | Defeito                                                                                             | Camada |
-|----|-----------------------------------------------------------------------------------------------------|--------|
-| 01 | Está semdp ´pssível bloquear horári na agenda do profissional com "tipo de bloqueio" não cadastrado | API    |
+| ID | Defeito                                                                                              | Camada |
+|----|------------------------------------------------------------------------------------------------------|--------|
+| 01 | Está sendo possível bloquear horário na agenda do profissional com "tipo de bloqueio" não cadastrado | API    |
 
 ```
 Material extraído do curso Liderança em Testes de Software com Júlio de Lima. Saiba mais em www.juliodelima.com.br.
